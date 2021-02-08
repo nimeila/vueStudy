@@ -5,7 +5,13 @@
         <router-link :to="{name:'demo'}">Demo</router-link>
       </li>
       <li>
-        <router-link :to="{name:'interview'}">面试题</router-link>
+        <router-link :to="{name:'whatsVue'}">什么是Vue</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'videoPlayer'}">视频播放</router-link>
+      </li>
+      <li>
+        <router-link :to="{name:'videoPlayer'}">视频播放</router-link>
       </li>
     </ul>
   </div>
