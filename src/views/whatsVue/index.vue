@@ -12,12 +12,14 @@
     <span>v-html会将msg解析为标签属性</span>
     <!--  条件与循环 -->
     <h2>2：条件与循环</h2>
-    <div class="screenshot">
+    <!-- <div class="screenshot">
       <el-button @click="showScreen">{{showText}}</el-button>
       <div class="img">
         <img src="../../assets/image/screenshot.jpeg" alt class v-show="flag" />
       </div>
-    </div>
+    </div>-->
+    <h3>##################</h3>
+    <div>{{filterValue|rfsPymtRsnType}}</div>
   </div>
 </template>
 <script>
@@ -30,10 +32,38 @@ export default {
       msg: 'v-html:  <span>222</span>',
       flag: true,
       showText: '隐藏',
+      filterValue: 'DC09',
     }
   },
   computed: {},
   watch: {},
+  filters: {
+    rfsPymtRsnType(newVal) {
+      console.log(newVal, '******')
+      switch (newVal) {
+        case 'DC00':
+          return '与自己有直接债权债务关系的持票人未履行约定义务'
+        case 'DC01':
+          return '持票人以欺诈、偷盗或者胁迫等手段取得票据'
+        case 'DC02':
+          return '持票人明知有欺诈、偷盗或者胁迫等情形，出于恶意取得票据'
+        case 'DC03':
+          return '持票人明知债务人与出票人或者持票人的前手之间存在抗辩事由而取得票据'
+        case 'DC04':
+          return '持票人因重大过失取得不符合《票据法》规定的票据'
+        case 'DC05':
+          return '超过提示付款期'
+        case 'DC06':
+          return '被法院冻结或收到法院止付通知书'
+        case 'DC07':
+          return '票据未到期'
+        case 'DC08':
+          return '商业承兑汇票承兑人账户余额不足'
+        case 'DC09':
+          return '其他'
+      }
+    },
+  },
   created() {},
   mounted() {},
   methods: {
